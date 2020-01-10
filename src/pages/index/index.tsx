@@ -1,8 +1,8 @@
 import { Button } from '@tarojs/components';
 import Taro from '@tarojs/taro';
+import './index.scss';
 import ClientContext from '../../utils/graphql/ClientContext';
 import TaroClient from '../../utils/graphql/TaroClient';
-import './index.scss';
 
 const client = new TaroClient({
   method: 'POST',
@@ -11,6 +11,7 @@ const client = new TaroClient({
     'content-type': 'application/json',
   },
 });
+
 function gotoHelloWorld() {
   Taro.navigateTo({
     url: '/pages/HelloWorld/HelloWorld',
@@ -20,7 +21,7 @@ function gotoHelloWorld() {
 const Index: Taro.FunctionComponent = () => {
   return (
     <ClientContext.Provider value={client}>
-      <Button onClick={gotoHelloWorld}>HelloWorld</Button>
+      <Button onClick={gotoHelloWorld}>hello-world</Button>;
     </ClientContext.Provider>
   );
 };
